@@ -4,7 +4,7 @@ Release:        1
 Summary:        Highly OpenSSH-compatible client with extended features.
 
 License:        MIT
-URL:            https://github.com/trzsz/trzsz-ssh
+URL:            https://trzsz.github.io/tssh
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  golang-bin >= 1.25

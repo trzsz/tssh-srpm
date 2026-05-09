@@ -12,6 +12,8 @@ jobs:
         run: dnf -y install rpkg
       - name: Build SRPM
         run: |
+          bin_version=$(awk -F':' '/^Version/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2}' tssh.spec)
+          wget -q https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v${bin_version}.tar.gz
           mkdir -p build
           cp *.spec build/
           rpkg srpm --outdir ./build
