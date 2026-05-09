@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Install Tools
-        run: dnf -y install rpkg
+        run: dnf -y install rpkg wget
       - name: Build SRPM
         run: |
           bin_version=$(awk -F':' '/^Version/ {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2}' tssh.spec)

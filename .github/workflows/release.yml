@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Install Tools
-        run: dnf -y install rpkg
+        run: dnf -y install rpkg wget
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
