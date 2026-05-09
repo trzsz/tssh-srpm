@@ -7,16 +7,10 @@ License:        MIT
 URL:            https://github.com/trzsz/trzsz-ssh
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  golang >= 1.25
-BuildRequires:  git
+BuildRequires:  golang-bin >= 1.25
 
-%if 0%{?rhel} >= 8 && 0%{?rhel} <= 9 || 0%{?mageia}
 %undefine _debugsource_packages
-%endif
-
-%if 0%{?openEuler} || 0%{?mageia} == 8
 %define debug_package %{nil}
-%endif
 
 %description
 trzsz-ssh(tssh) is a highly OpenSSH-compatible client with extended features.
@@ -25,10 +19,9 @@ trzsz-ssh(tssh) is a highly OpenSSH-compatible client with extended features.
 %autosetup -n trzsz-ssh-%{version}
 
 %build
-%if 0%{?mageia} == 8
+export CGO_ENABLED=0
 export GOPROXY=direct
-%endif
-go build -o %{_builddir}/bin/tssh ./cmd/tssh
+go build -ldflags="-s -w" -o %{_builddir}/bin/tssh ./cmd/tssh
 
 %install
 mkdir -p %{buildroot}%{_bindir}
