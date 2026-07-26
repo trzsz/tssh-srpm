@@ -1,5 +1,5 @@
 Name:           tssh
-Version:        0.1.25
+Version:        0.1.26
 Release:        1
 Summary:        Highly OpenSSH-compatible client with extended features.
 
@@ -31,5 +31,8 @@ install -m 0755 %{_builddir}/bin/tssh %{buildroot}%{_bindir}/tssh
 %{_bindir}/tssh
 
 %changelog
+* Sun Jul 26 2026 Lonny Wong <lonnywong@qq.com> - 0.1.26-1
+- Update to tssh v0.1.26
+
 * Sun May 3 2026 Lonny Wong <lonnywong@qq.com> - 0.1.25-1
 - Initial RPM spec for tssh
