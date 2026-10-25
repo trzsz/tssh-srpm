@@ -31,7 +31,7 @@ install -m 0755 %{_builddir}/bin/tssh %{buildroot}%{_bindir}/tssh
 %{_bindir}/tssh
 
 %changelog
-- Sun Oct 25 2026 Lonny Wong <lonnywong@qq.com> - 0.1.27-1
+* Sun Oct 25 2026 Lonny Wong <lonnywong@qq.com> - 0.1.27-1
 - Update to tssh v0.1.27
 
 * Sun Jul 26 2026 Lonny Wong <lonnywong@qq.com> - 0.1.26-1
